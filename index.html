@@ -2,44 +2,16 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<link href="assets/css/common.css" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; }
-body {
-  max-width: 60rem;
-}
-h1 {
-  margin: 0 20px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  text-decoration: underline;
-}
-h2 {
-  margin: 0 30px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-p {
-  margin: 1px 25px;
-}
-p::before {
-  content: "　";
-}
-p.note {
-  padding: 0 15px;
-  font-size: 0.8rem;
-}
-p.note::before {
-  content: "　※";
-}
-ul, ol {
-  margin-left: calc(40px + 1rem);
-}
 li {
-  margin: 5px 0;
+  margin: 10px 0;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 li.tbd {
   font-weight: normal;
+  font-size: 1rem;
 }
 li.tbd::before {
   content: " [準備中] ";
@@ -50,32 +22,42 @@ li.tbd::before {
 </head>
 <body>
 
+<main>
+
 <h1>ミニゲームの仕様集</h1>
-<p>
-プログラミングの練習題に良さそうな、ミニゲームを集めました。
-</p>
-<p>
-それぞれ、どのようなゲームかを記しています。表示する項目、処理の切っ掛けと結果、初期表示と結果表示、エラー時の表示などがあります。
-</p>
-<p>
-ここに記載のとおりに実装する必要はありません。あくまでプログラミングの練習をしたいときに便利なテーマを提供することが、このページの目的です。
-</p>
-<p>
-記載内容について、問題が見つかった場合は、<a href="https://github.com/awazo/mini-game-specs">このページのリポジトリ</a>までプルリクエストをいただけると助かります。
-</p>
-<p class="note">
-各ゲームについては、権利などで第三者が公開不可能なものもあるかと思います。新たなゲームの追加リクエストも歓迎はしますが、とくに昨今の新しめのボードゲームなどは追加できない場合が多いと思いますので、ご承知おきください。
-</p>
-<p class="note">
-ここに記載しているゲームについては、掲載可能かをなるべく確認するようにはしていますが、問題があることに気づかれた場合は<a href="https://github.com/awazo/mini-game-specs/issues">New issue</a>からお知らせください。
-</p>
+<div class="h1content">
+  <p>
+  プログラミングの練習題に良さそうな、ミニゲームを集めました。
+  </p>
+  <p>
+  それぞれ、どのようなゲームかを記しています。表示する項目、処理の切っ掛けと結果、初期表示と結果表示、エラー時の表示などがあります。
+  </p>
+  <p>
+  ここに記載のとおりに実装する必要はありません。あくまでプログラミングの練習をしたいときに便利なテーマを提供することが、このページの目的です。
+  </p>
+  <p>
+  記載内容について、問題が見つかった場合は、<a href="https://github.com/awazo/mini-game-specs">このページのリポジトリ</a>までプルリクエストをいただけると助かります。
+  </p>
+  <div class="note">
+    <p>
+    各ゲームについては、権利などで第三者が公開不可能なものもあるかと思います。新たなゲームの追加リクエストも歓迎はしますが、とくに昨今の新しめのボードゲームなどは追加できない場合が多いと思いますので、ご承知おきください。
+    </p>
+    <p>
+    ここに記載しているゲームについては、掲載可能かをなるべく確認するようにはしていますが、問題があることに気づかれた場合は<a href="https://github.com/awazo/mini-game-specs/issues">New issue</a>からお知らせください。
+    </p>
+  </div>
+</div>
 
 <h2>目次</h2>
-<ul>
-<li class="tbd">数値当て</li>
-<li class="tbd">2048</li>
-<li class="tbd">マインスイーパ</li>
-</ul>
+<div class="h2content">
+  <ul>
+    <li><a href="games/guess-number/index.html">数値当て</a></li>
+    <li class="tbd"><a href="#">2048</a></li>
+    <li class="tbd"><a href="#">マインスイーパ</a></li>
+  </ul>
+</div>
+
+</main>
 
 </body>
 </html>

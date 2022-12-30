@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="../../assets/css/common.css" rel="stylesheet">
+<link href="../../assets/css/page.css" rel="stylesheet">
+<link href="../../assets/css/description.css" rel="stylesheet">
+<style>
+.answer {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid black;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.answer input {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.6rem;
+  vertical-align: top;
+  font-size: 0.8rem;
+}
+.result {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 2rem;
+}
+.thenumber {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid black;
+  font-size: 2.5rem;
+  background-color: lightgray;
+}
+.thenumber.correct {
+  background-color: white;
+}
+.controller {
+  text-align: center;
+}
+.controller button {
+  margin-left: 10px;
+  padding: 0 2px;
+}
+.controller button:first-of-type {
+  margin-left: 0;
+}
+.message span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #009933;
+}
+.message.error span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff6600;
+}
+</style>
+<title>guess number</title>
+</head>
+<body>
+
+<header>
+<div>
+  <a href="../../index.html">目次に戻る</a>
+</div>
+</header>
+
+<main>
+
+<h1>数値当て</h1>
+
+<h2>概要</h2>
+<div class="h2content">
+  <p>
+  プレイヤーが入力した数値が、プログラムがランダムに生成した数値と一致したらクリアです。
+  </p>
+  <p>
+  プログラムは最初にランダムで1から100の間の整数を生成し、表示せずに保持しておきます。プレイヤーの入力が、それより大きいか小さいかを表示します。
+  </p>
+</div>
+
+<h2>詳細</h2>
+
+<h3>初期表示</h3>
+<div class="h3content">
+  <div class="example-image">
+    <div class="page">
+      <div>
+        <div class="answer">
+          <input type="text" placeholder="回答欄" />
+        </div>
+        <div class="result">
+          <span>?</span>
+        </div>
+        <div class="thenumber"></div>
+      </div>
+      <div class="controller">
+        <button type="button">回答する</button>
+        <button type="button">リセット</button>
+      </div>
+    </div>
+    <div class="caption">
+      <span>初期表示は「？」で、正解はグレーで隠す</span>
+    </div>
+  </div>
+  <div class="description">
+    <p>
+    初期表示が完了するまでに、プログラムは正解の整数をランダムに生成し、保持しておく。
+    </p>
+    <p>
+    プレイヤーが回答欄に入力して、回答するボタンを押すと、「？」が以下のように変わる。
+    </p>
+    <ul>
+      <li>回答が、正解より大きい場合は「&gt;」に変わる</li>
+      <li>回答が、正解より小さい場合は「&lt;」に変わる</li>
+      <li>回答が、正解と一致している場合は「=」に変わる</li>
+    </ul>
+    <p>
+    プレイヤーの回答が正解と一致しているとき、回答するボタンの代わりに正解メッセージを出すか、回答するボタンを押せないようにする。回答欄も入力不可にする。
+    </p>
+    <p>
+    プレイヤーがリセットボタンを押すと、初期表示に戻り、新たにランダムに生成した正解を保持しておく。
+    </p>
+    <p>
+    プレイヤーの入力が整数でないとき、ボタンの上か下にエラーメッセージを表示する。
+    </p>
+  </div>
+</div>
+
+<h3>正解より大きい場合</h3>
+<div class="h3content">
+  <div class="example-image">
+    <div class="page">
+      <div>
+        <div class="answer">
+          <input type="text" placeholder="回答欄" value="80" />
+        </div>
+        <div class="result">
+          <span>&gt;</span>
+        </div>
+        <div class="thenumber"></div>
+      </div>
+      <div class="controller">
+        <button type="button">回答する</button>
+        <button type="button">リセット</button>
+      </div>
+    </div>
+    <div class="caption">
+      <span>大きい場合は「&gt;」になる。小さい場合は同様なので省略</span>
+    </div>
+  </div>
+  <div class="description">
+    <p>
+    プレイヤーは、続けて回答することもできるし、諦めてリセットすることもできる。
+    </p>
+  </div>
+</div>
+
+<h3>正解した場合</h3>
+<div class="h3content">
+  <div class="example-image">
+    <div class="page">
+      <div>
+        <div class="answer">
+          <input type="text" placeholder="回答欄" value="63" readonly />
+        </div>
+        <div class="result">
+          <span>=</span>
+        </div>
+        <div class="thenumber correct">63</div>
+      </div>
+      <div class="controller">
+        <button type="button" disabled>回答する</button>
+        <button type="button">リセット</button>
+      </div>
+      <div class="message"><span>正解です!!!<span></div>
+    </div>
+    <div class="caption">
+      <span>正解すると、隠していた数字を表示する</span>
+    </div>
+  </div>
+  <div class="description">
+    <p>
+    プレイヤーにできるのは、リセットボタンを押すことのみ。
+    </p>
+  </div>
+</div>
+
+<h3>エラー表示</h3>
+<div class="h3content">
+  <div class="example-image">
+    <div class="page">
+      <div>
+        <div class="answer">
+          <input type="text" placeholder="回答欄" value="aaa" />
+        </div>
+        <div class="result">
+          <span>?</span>
+        </div>
+        <div class="thenumber"></div>
+      </div>
+      <div class="controller">
+        <button type="button">回答する</button>
+        <button type="button">リセット</button>
+      </div>
+      <div class="message error"><span>1から100までの整数が入力できます</span></div>
+    </div>
+    <div class="caption">
+      <span>エラーのときは直前の表示と変わらずに、エラーメッセージを表示する</span>
+    </div>
+  </div>
+  <div class="description">
+    <p>
+    エラーメッセージはボタンの上に表示するのも良さそう。
+    </p>
+  </div>
+</div>
+
+</main>
+
+<footer>
+<div>
+  <a href="../../index.html">目次に戻る</a>
+</div>
+</footer>
+
+</body>
+</html>

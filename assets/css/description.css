@@ -1,0 +1,15 @@
+div.description {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+div.description * {
+  margin-top: 5px;
+}
+
+div.description ul, dev.description ol {
+  font-size: 0.93rem;
+}
+div.description ul li, dev.description ol li {
+  margin-left: 2rem;
+}
+

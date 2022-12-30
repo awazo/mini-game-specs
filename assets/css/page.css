@@ -1,0 +1,18 @@
+div.example-image {
+  margin: 5px 50px;
+  padding: 15px;
+  width: fit-content;
+  border: 1px solid black;
+}
+div.page {
+  padding: 5px;
+  width: fit-content;
+  border: 2px solid lightgray;
+}
+div.caption {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: fit-content;
+  font-size: 0.7rem;
+}
+
